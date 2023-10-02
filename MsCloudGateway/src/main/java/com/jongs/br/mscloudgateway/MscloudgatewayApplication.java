@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableEurekaClient
 public class MscloudgatewayApplication {
 
 	public static void main(String[] args) {
@@ -19,7 +18,9 @@ public class MscloudgatewayApplication {
 	@Bean
 	public RouteLocator routes(RouteLocatorBuilder builder){
 		return builder.
-			routes().route(r -> r.path("/clients/**").uri("lb://msclients"))
+			routes()
+			.route(r -> r.path("/clients/**").uri("lb://msclients"))
+			.route(r -> r.path("/card/**").uri("lb://mscards"))
 		.build();
 	}
 }
