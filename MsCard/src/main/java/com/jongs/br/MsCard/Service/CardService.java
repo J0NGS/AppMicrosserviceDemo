@@ -12,7 +12,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.jongs.br.MsCard.Model.Card;
 import com.jongs.br.MsCard.Model.DTO.CardSaveRequest;
-import com.jongs.br.MsCard.Model.DTO.Mapper.CardMapper;
 import com.jongs.br.MsCard.Repository.CardRepository;
 @Service
 public class CardService {
